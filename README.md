@@ -5,10 +5,4 @@ Steps to run -
 3. npm install
 4. yarn start
 
-Tutorial Playlist - https://www.youtube.com/playlist?list=PLpBvfX8lxmEFjKhCUw-8PYniTz4gZgsuy
-
-Live Site - https://reminder-appl.netlify.app
-
-You can add "Edit Reminder Functionality" as well as perform "Error Handling in User Authentication" as a challenge. In case you are stuck, you can refer - https://github.com/sumeetgodse/reacttraining/tree/reminder-app/
-
-Happy Coding!
+Live Site - https://6446cd0fe887dc2621bb307a--lucky-begonia-76c37d.netlify.app
