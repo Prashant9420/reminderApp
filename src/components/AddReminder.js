@@ -7,6 +7,8 @@ import { useSelector } from "react-redux";
 
 const AddReminder = () => {
     const [reminderText, setReminderText] = useState("");
+    const [reminderDate, setDate] = useState("");
+    const [reminderTime, setTime] = useState("");
     const loggedIndex = useSelector((state => state.indexReducer[0]));
     const users = store.getState().userReducer;
     const handleChange = (e) => {
@@ -16,10 +18,12 @@ const AddReminder = () => {
     const handleSubmit = () => {
         const reminder = {
             username: users[loggedIndex].username,
-            text: reminderText
+            text: reminderText+"|"+reminderDate+"|"+reminderTime
         }
         store.dispatch(addReminder(reminder))
         setReminderText("");
+        setDate("");
+        setTime("");
     }
 
     return(
@@ -35,6 +39,8 @@ const AddReminder = () => {
                     value={reminderText}
                     onChange={handleChange}
                 />
+                <input type="date" value={reminderDate} onChange={(e)=>setDate(e.target.value)}/>
+                <input type="time" value={reminderTime} onChange={(e)=>setTime(e.target.value)}/>
             </div>
             <div className="add-button">
                 <input className="button" type="button" value="Add Reminder" onClick={handleSubmit} />

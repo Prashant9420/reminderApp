@@ -9,6 +9,7 @@ const Reminders = () => {
     const reminders = useSelector((state) => state.reminderReducer); 
     const loggedIndex = useSelector((state => state.indexReducer[0]));
     const users = store.getState().userReducer;
+    
 
     const handleDelete = (reminder) => {
         store.dispatch(deleteReminder(reminder));
@@ -27,7 +28,10 @@ const Reminders = () => {
                         <div className="column">
                             <div className="card">
                                 <img src={cancel} className="delete" onClick={() => handleDelete(reminder)} />
-                                {reminder.text}
+                                {reminder.text.split('|')[0]}<br/>
+                                date: {reminder.text.split('|')[1]}<br/>
+                                time: {reminder.text.split('|')[2]}
+                                
                             </div>
                         </div>
                     )

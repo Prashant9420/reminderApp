@@ -10,8 +10,10 @@
 .reminder-text{
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding-top: 80px;
+    flex-direction: column;
+    /* border: 2px solid red; */
+    justify-content: space-around;
+    height: 70%;
 }
 
 .add-button{
